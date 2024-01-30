@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    color: #ffffff;  /* #000411; */
+    font-family: 'Poppins', Arial;
+    font-size: 15px; /* Garamond; , "Helvetica Neue", Helvetica, sans-serif;Poppins;*/
+    text-shadow: 1px 1px 1px darkslateblue;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+body h1, h2, h3, h4 {
+    text-shadow: 1px 1px 2px darkslateblue;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#bg {
+    position: fixed; 
+    top: -50vh;
+    left: -50vw; 
+    width: 200vw; 
+    height: 200vh;
+}
+
+#bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(15px); /* Safari 6.0 - 9.0 */
+    filter: blur(15px);
+}
+
+/* Glassmorphism card effect */
+.card {
+    display: block;
+    max-width: 950px;
+    margin: 5px auto;
+    backdrop-filter: blur(35px) saturate(60%);
+    -webkit-backdrop-filter: blur(35px) saturate(60%);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.work-details{
+    display: block;
+    margin: 5px;
+    backdrop-filter: blur(35px) saturate(60%);
+    -webkit-backdrop-filter: blur(35px) saturate(60%);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    padding: 10px 15px;
+    page-break-inside: avoid;
+}
+
+#header {
+    height: 490px;
+}
+
+@media screen and (max-width:965px) {
+    #header {
+        height: calc(490px - calc(275px - 29vw)) 
+    }
+}
+
+@media screen and  (max-width:491px) {
+    #header {
+        height: calc(490px - calc(255px - 29vw)) ;
+    }
+}
+
+@media screen and (max-width:367px) {
+    #header {
+        height: calc(490px - calc(235px - 29vw)) ;
+    }
+}
+
+#bird {
+    width: 100%;
+    border-radius: 12px;
+}
+
+#profile-pic {
+    width: 155px;
+    position:relative;
+    top: -100px;
+    left: 20px;
+}
+
+#profile-pic img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#profile-bio{
+    position: relative;
+    top: -100px;
+    left: 25px;
+    width: 90%;
+}
+
+#profile-bio h1, h2, h3, h4 { 
+    margin: 0px;
+}
+
+#profile-bio span {
+    display: block;
+}
+
+#about, #experiene, #skills {
+    padding: 10px 25px;
+}
+
+
+/* CSS for Printing Page */
+@media print {
+    body {
+        text-shadow: none;
+        color: black;
+    }
+
+    body h1, h2, h3, h4 {
+        text-shadow: none;
+    }
+
+    #bg {
+        display: none;
+    }
+
+    .card {
+        border: 1px solid black;
+    }
+    
+    #experiene {
+        border: none;
+        padding: 0px;
+    }
+
+    #experiene h2 {
+        padding: 10px;
+    }
+
+    .work-details{
+        border: 1px solid black;
+    }
+
+    a {
+        color: black;
+    }
+
+    #profile-pic, #bird {
+        display: none;
+    }
+
+    #profile-bio{
+        top: unset;
+     }
+        
+    #header {
+        height: unset;
+        padding: 10px 5px;
+    }
+
+}

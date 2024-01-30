@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    <title>Cherian Paul Resume</title>
+</head>
+<script>
+    const getAge = (dateString,showMonth=false) => {
+        const today = new Date();
+        const birthDate = new Date(dateString.replace(/-/g, '/'));
+        const yearsLater = new Date((birthDate.getFullYear()+1)+"/"+(birthDate.getMonth()+1)+"/"+birthDate.getDate());
+        const monthsLater = new Date((birthDate.getFullYear())+"/"+(birthDate.getMonth()+2)+"/"+birthDate.getDate());
+        const daysLater = new Date((birthDate.getFullYear())+"/"+(birthDate.getMonth()+1)+"/"+(birthDate.getDate()+1));
+
+        years = Math.floor((today-birthDate)/(yearsLater-birthDate));
+        dateMonths  = (today-birthDate)%(yearsLater-birthDate);
+        months = Math.floor(dateMonths / (monthsLater-birthDate));
+        dateDays = dateMonths % (monthsLater-birthDate);
+        days = Math.floor(dateDays / (daysLater-birthDate));
+        //return {"years": years, "months": months, "days": days};
+        if(!Number.isInteger(months)) {
+            months=11;
+        } 
+        if(!Number.isInteger(years)){
+            years = (today.getFullYear() - birthDate.getFullYear() -1);
+        }
+        if(showMonth && months > 0 ){
+            return (`${years} yrs ${months} mo`);
+        } else {
+            return (`${years} years`);
+        }
+    };    
+ </script> 
+<body>
+    <div id="bg">
+        <picture>
+            <source srcset="img/bird_mobile.jpg" media="(max-width: 750px)">
+            <img src="img/bird_wallpaper.jpg" alt="">
+        </picture>
+    </div>
+    <div id="header" class="card">
+        <img id="bird" src="img/bird_header.jpg">
+        <div id="profile-pic">
+            <img  src="img/cherian_paul.jpg">
+        </div>
+        <div id="profile-bio">
+            <h2>Cherian M. Paul</h2>        
+            <h4>Freelance Web Application Developer and IT Manager</h4>
+            <span>Houston, Texas, United States.</span>
+            <script>
+                let username = "cherian";
+                let hostname = "cherianpaul.com";
+                let linktext = username + "@" + hostname ;
+                let area = "(713)45";
+                let code = "2-0981";
+                document.write(area +  code + ".");
+                document.write(" <a href='" + "mail" + "to:" + username + "@" + hostname + "'  target='_blank'>" + linktext + "</a>.");
+              </script>
+        </div>
+    </div>
+    <div id="about" class="card">
+        <h2>About</h2>
+        <p>
+            Over <script>document.write (`${getAge("2002/11/01")}`);</script> Experience in Software Development with <script>document.write (`${getAge("2014/11/01")}`);</script> Experience in Server Setup and Maintenance for Web Applications. Able to lead and take care of the complete 
+            IT infrastructure in a small business. Able to lead in Application design and development of Web applications.
+        </p>
+    </div>
+    <div id="skills" class="card">
+        <h2>Skills</h2>
+        <p>
+            Full-Stack Development · HTML5 · CSS3 · JavaScript · REACT · REST API · MySQL · PHP · Sanity · Python
+        </p>
+        <p>
+            <b>Other Skills:</b> Database Administration · Web Server Administration · SQL Server Integration Services (SSIS) · SQL Server Reporting Services (SSRS)
+            · ASP.NET MVC · C · C++ · C# · Active Server Pages (ASP) · VBScript · Perl · Microsoft SQL Server
+        </p>
+    </div>
+    <div id="experiene" class="card">
+        <h2>Experience</h2>
+        <div class="work-details">
+            <h3>Freelance Web Developer</h3>
+            <p>Nov 2014 - Present · <script>document.write (`${getAge("2014/11/01",true)}`);</script></p>
+            <ul>
+                <li> Developed Windows Application Using C, C++ with QT Framework. </li>
+                <li> Developed a social media application with React and Sanity.</li>
+                <li> Developed ecommerce applications with Stripe Payment Gateway.</li>
+                <li> Developed a travel advisor app that communicates with Google Maps api.</li>
+                <li> Developed Web applications that look and feel like Windows Native Application.</li>
+                <li> Developed several websites for clients with HTML5, CSS3 and JavaScript.</li>
+                <li> Developed Web Applications with HTML5, CSS3 and JavaScript as Front end and REST Service build in PHP and MySQL as Back end. </li>
+                <li> Setup and Maintained Web Servers and MySQL servers on Linux systems.</li>
+                <li> Provided Web-hosting services to the clients.</li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Senior Software Engineer</h3>
+            <h4>Houston Chronicle</h4>
+            <p>Dec 2012 - Oct 2014 · 1 yr 11 mo</p>
+            <ul>
+                <li> Mostly working on SQL Server Integration and Reporting Services. Worked on few .NET and Classic ASP projects.</li>
+                <li> Developed a complete application in ASP.NET C# to manage the distribution and return of newspapers sold on stores.</li> 
+                <li> Converted few classic asp pages to ASP.NET. </li>
+                <li> Worked on developing BI and data warehousing system for newspaper sales data. </li>
+                <li> Helped in fixing some Perl Scripts.</li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Senior Software Developer</h3>
+            <h4>Advanced Diagnostics Hospitals & Clinics</h4>
+            <p>Dec 2008 - Dec 2012 · 4 yrs 1 mo</p>
+            <ul>
+                <li> Developed a coding protocol in ASP.NET for doctors to generate automated medical reports.</li>
+                <li> Developed a complete Order Entry System in ASP.NET interfacing with Microsoft SQL Server for creating orders from multiple Hospitals in Houston. </li>
+                <li> Developed an application in ASP.NET to automate the billing system. </li>
+                <li> Developed a Windows application in VB.NET for the call center that communicates with the telephone server and displays appropriate information based on the caller Id.</li>
+                <li> Developed a Windows application in VB.NET to automatically verify the patients insurance information by interfacing with the insurance companies.</li>
+                <li> Developed a complete billing dashboard in ASP.NET which displays billing graphs and collection graphs. </li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Level II Tech</h3>
+            <h4>HP</h4>
+            <p>Oct 2008 - Dec 2008 · 3 mo</p>
+            <ul>
+                <li> Mostly involved in Hardware Testing and Troubleshooting.  </li>
+                <li> Helped co-workers in building Servers. </li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Junior Programmer</h3>
+            <h4>Allsec Technologies Limited</h4>
+            <p>Dec 2004 - Aug 2007 · 2 yrs 9 mo</p>
+            <ul>
+                <li> Developed Web applications in ASP.NET interfacing with Microsoft SQL Server. </li>
+                <li> Developed Windows applications in C# .NET. </li>
+                <li> Developed applications using AJAX in in Classic ASP. </li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Foxpro Application Developer</h3>
+            <h4>Polymath Software Technologies </h4>
+            <p>Feb 2002 - Oct 2004 · 2 yrs 9 mo</p>
+            <ul>
+                <li> Developed Database Management Programs in Visual Foxpro with multi user environment.</li>
+            </ul>
+        </div>
+        <div class="work-details">
+            <h3>Visual Basic Programmer</h3>
+            <h4>Visual Ads </h4>
+            <p>Aug 2001 - Jan 2002 · 6 mo</p>
+            <ul>
+            <li> Developed Applications in Visual Basic 6.0.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="displayDate">
+        <!-- Display Date on the Bottom when Printed -->
+        <script>document.write (`> Date : 
+        ${(new Date()).toLocaleDateString(
+            "en-US",
+            { weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })
+        }`);</script>
+    </div>
+</body>
+</html>
